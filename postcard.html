@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neetu Nabbu's Rekastic Card</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #ffdde1, #ffc3a0);
+      background-size: 600% 600%;
+      animation: bgAnimation 20s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+    @keyframes bgAnimation {
+      0%,100% { background-position: 0% 50%; }
+      50%    { background-position: 100% 50%; }
+    }
+    .floating {
+      position: absolute;
+      font-size: 20px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.4;
+    }
+    .floating:nth-child(1) { top: 10%; left: 5%;  animation-delay: 0s; }
+    .floating:nth-child(2) { top: 80%; left: 10%; animation-delay: 2s; }
+    .floating:nth-child(3) { top: 50%; right: 5%;  animation-delay: 4s; }
+    .floating:nth-child(4) { top: 20%; right: 15%; animation-delay: 1s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-20px); }
+    }
+
+    .postcard {
+      width: 390px;
+      height: 260px;
+      perspective: 1000px;
+      position: relative;
+      z-index: 2;
+    }
+    .card {
+      width: 100%; height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1.2s ease, box-shadow 0.4s ease;
+    }
+    .postcard:hover .card {
+      transform: rotateY(180deg) scale(1.03);
+      box-shadow: 0 0 30px rgba(255,105,180,0.7);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%; height: 100%;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      border: 3px solid #fff;
+    }
+    .front {
+      background: linear-gradient(to right, #f83600, #f9d423);
+      font-family: 'Pacifico', cursive;
+      font-size: 30px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 2px 2px 6px #000;
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%,100% { box-shadow: 0 0 10px #fff; }
+      50%     { box-shadow: 0 0 20px #ff6ec4, 0 0 30px #f9d423; }
+    }
+
+    .back {
+      background: #fff8fc;
+      color: #444;
+      transform: rotateY(180deg);
+      flex-direction: column;
+      border: 3px solid #ff6ec4;
+      box-shadow: 0 0 20px rgba(255,20,147,0.3);
+      text-align: center;
+    }
+    .back p {
+      font-size: 15px;
+      margin: 5px 0;
+    }
+    .back small {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #999;
+    }
+    .emoji {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    a:hover {
+      color: #f83600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating art/code icons -->
+  <div class="floating">🌟</div>
+  <div class="floating">🎨</div>
+  <div class="floating">💻</div>
+  <div class="floating">✏</div>
+
+  <div class="postcard">
+    <div class="card">
+      <div class="front">
+        Nabbu💖
+         <br/>✨CreativeCoder & Artist🌈
+      </div>
+      <div class="back">
+        <p class="emoji">👩‍💻🎨✏</p>
+        <p><strong>K. Nabeela Fatima</strong></p>
+        <p>🎨 Pencil art · Digital art · Calligraphy<br/>Oil painting · Crafts</p>
+        <p>💻 Full‑stack Dev (Laravel back‑end)</p>
+        <p>
+          📸 Insta: <a href="https://www.instagram.com/neetu_nabbu" target="_blank">@neetu_nabbu</a><br/>
+          🐙 GitHub: <a href="https://github.com/neetunabbu" target="_blank">neetunabbu</a>
+        </p>
+        <small>Keep creating. Keep coding. 💕</small>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
